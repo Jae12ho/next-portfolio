@@ -46,7 +46,7 @@ export async function getServerSideProps() {
           page_size: 100,
           sorts: [
             {
-              "property": "id",
+              "property": "Name",
               "direction": "ascending"
             }
           ]
@@ -56,7 +56,7 @@ export async function getServerSideProps() {
     const res = await fetch(`https://api.notion.com/v1/databases/${DATABASE_ID}/query`, options)
     
     const projects = await res.json();
-
+    console.log(projects)
     const projectNames = projects.results.map((project) => (
         project.properties.Name.title[0] ? project.properties.Name.title[0].plain_text : '제목 없음'
     ))
