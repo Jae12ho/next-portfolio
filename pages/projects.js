@@ -46,8 +46,8 @@ export async function getServerSideProps() {
           page_size: 100,
           sorts: [
             {
-              "property": "Name",
-              "direction": "descending"
+              "property": "id",
+              "direction": "ascending"
             }
           ]
         })
